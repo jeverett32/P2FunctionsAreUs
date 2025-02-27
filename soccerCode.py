@@ -5,9 +5,17 @@ Soccer = {}
 Season = []
 Games = []
 
+TeamOptions = ["Utah State", "BYU", "UCLA", "Florida State", "Notre Dame", "BSU", "USC", "Penn State"] 
+
+
 # gather inputs/set information 
-HomeTm = input("Enter the name of your home team: ")
-GameCt = int(input("Enter the number of teams "+ HomeTm + " will play against (1-10): "))
+
+from Q3Fx import HomeSelection, OpponentSelection
+
+HomeTm = HomeSelection()
+print(HomeTm)
+
+GameCt = int(input("Enter the number of teams "+ HomeTm + " will play against (1-7): "))
 
 Soccer[HomeTm] = Season
 
@@ -18,7 +26,11 @@ Num = 1
 
 # Gather game-specific information (name, scores, etc)
 for Ct in range(GameCt):
-    OpTm = input(f"Enter the name of the away team for game {Num}: ")
+    
+    OpTm = OpponentSelection()
+
+    print(f"{HomeTm} is playing against {OpTm}")
+
     # for game # 
     HmScr =0 
     OpScr = 0 
