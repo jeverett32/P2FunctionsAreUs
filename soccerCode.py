@@ -54,19 +54,20 @@ for Ct in range(GameCt):
     print(f"{HomeTm} is playing against {OpTm}")
 
     # for game # 
-    HmScr =0 
-    OpScr = 0 
+    play_game(HomeTm, OpTm)
+
+
 
 def play_game(HomeTm, OpTm):
     home_score = 0
     opponent_score = 0
-    
+    #generate the scores for the game
     while home_score == opponent_score:
         home_score = random.randint(0, 10)
         opponent_score = random.randint(0, 10)
-    
+    #calculate the result
     result = "W" if home_score > opponent_score else "L"
-    
+    #store the games
     games = {
         "home_team" : home_team,
         "home_score" : home_score,
