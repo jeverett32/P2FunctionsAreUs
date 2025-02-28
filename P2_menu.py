@@ -10,10 +10,13 @@ def menu() :
     print("4. Exit")
 
     # get user input but do not allow any input outside of the menu choices
-    while not iChoice in [1, 2, 3, 4] :
-        iChoice = int(input("\nChoose an option (1, 2, 3, or 4) ")) 
-    if iChoice not in [1, 2, 3, 4] :   
-        print("\nPlease enter a valid number ")
+    bCont = True
+    while bCont == True :
+        try :
+            iChoice = int(input("\nChoose an option (1, 2, 3, or 4) "))
+            bCont = False
+        except ValueError :
+            print("\nPlease enter a valid number ")
 
     # return the input
     return iChoice
