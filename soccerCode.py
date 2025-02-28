@@ -54,25 +54,29 @@ for Ct in range(GameCt):
     print(f"{HomeTm} is playing against {OpTm}")
 
     # for game # 
-    HmScr =0 
-    OpScr = 0 
+    play_game(HomeTm, OpTm)
 
-    import random
 
-    while HmScr == OpScr:
-        HmScr = random.randrange(0, 10)
-        OpScr = random.randrange(0, 10)
 
-    if HmScr > OpScr:
-        Win +=1
-        Result = "Win"
-    else:
-        Loss +=1
-        Result = "Loss"
-    Num += 1
-    Games.append([HmScr, OpTm, OpScr, Result])
-    # append each score to the list of games
-Season.append([Games])
+def play_game(HomeTm, OpTm):
+    home_score = 0
+    opponent_score = 0
+    #generate the scores for the game
+    while home_score == opponent_score:
+        home_score = random.randint(0, 10)
+        opponent_score = random.randint(0, 10)
+    #calculate the result
+    result = "W" if home_score > opponent_score else "L"
+    #store the games
+    games = {
+        "home_team" : home_team,
+        "home_score" : home_score,
+        "opponent_team" : opponent_team,
+        "opponent_score" : opponent_team,
+        "result" : result
+    }
+    Season.append(games)
+    return result
 # append games to the season
 
 # Display season record 
