@@ -1,28 +1,6 @@
 # This is my original code for assignment A4 
 # initialize lists 
 
-#Meagan Brown
-#Creating a function that explains how the game will work
-#Collects the name of the player
-#Returns the name to be used in the program later.
-#Create a function
-def get_player_name():
-    #A welcome introduction to explain how the game will work
-    print("Welcome to the Soccer Team Tournament Matchup!")
-    print("\n   How to Play:")
-    print("   1. Choose your team from the list provided.")
-    print("   2. Select an opponent to challenge.")
-    print("   3. The selected teams will play against each other in an intense match.")
-    print("   4. Check out the final score and see which team comes out on top.\nMay the best team win!")
-    #Collect the player's name
-    name=input("\nTo start, enter your name: ")
-    #Personalized welcome message
-    print(f"Welcome, {name}! Get ready to play!")
-    #Returning name to be used in the program
-    return name
-#Call the function to get the player's name
-player_name= get_player_name()
-
 Soccer = {}
 Season = []
 Games = []
@@ -33,6 +11,10 @@ TeamOptions = ["Utah State", "BYU", "UCLA", "Florida State", "Notre Dame", "BSU"
 # gather inputs/set information 
 
 from Q3Fx import HomeSelection, OpponentSelection
+from get_player_name_function import get_player_name
+from Q5Fx import seasoninfo
+
+player_name= get_player_name()
 
 HomeTm = HomeSelection()
 print(HomeTm)
@@ -75,24 +57,5 @@ for Ct in range(GameCt):
 Season.append([Games])
 # append games to the season
 
-# Display season record 
-print(f'\nGame Results:')
-
-# loop through each game to print out scores 
-rounds = 0
-for rounds in range(GameCt):
-    print(f"{HomeTm}'s score: {Games[rounds][0]} {Games[rounds][1]}'s score: {Games[rounds][2]}")
-    rounds +=1
-
-print(f"\nFinal season record: {Win} - {Loss} ")
-
-# calculate and print game stats 
-if GameCt >0:
-    Percent = float(Win/(GameCt))
-else: Percent = 0
-
-if Percent >= 0.75:
-    print("Qualified for the NCAA Women's Soccer Tournament")
-elif Percent >=0.5:
-    print("You had a good season")
-else: print("Your team needs to practice!")
+# call the function to display the results of the season
+seasoninfo(Soccer, Win, Loss)
