@@ -10,12 +10,10 @@ def get_player_name():
     print("   1. Choose your team from the list provided.")
     print("   2. Select an opponent to challenge.")
     print("   3. The selected teams will play against each other in an intense match.")
-    print("   4. Check out the final score and see which team comes out on top.\nMay the best team win!")
+    print("   4. Check out the final score and see which team comes out on top.\n\nMay the best team win!")
     #Collect the player's name
     name=input("\nTo start, enter your name: ")
     #Personalized welcome message
     print(f"Welcome, {name}! Get ready to play!")
     #Returning name to be used in the program
     return name
-#Call the function to get the player's name
-player_name= get_player_name()
