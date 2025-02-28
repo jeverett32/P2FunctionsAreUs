@@ -17,5 +17,3 @@ def get_player_name():
     print(f"Welcome, {name}! Get ready to play!")
     #Returning name to be used in the program
     return name
-#Call the function to get the player's name
-player_name= get_player_name()
