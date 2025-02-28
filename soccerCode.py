@@ -61,6 +61,7 @@ for Ct in range(GameCt):
 
 
 def play_game(HomeTm, OpTm):
+    import random
     home_score = 0
     opponent_score = 0
     #generate the scores for the game
@@ -82,6 +83,7 @@ def play_game(HomeTm, OpTm):
 # append games to the season
 
 play_game(HomeTm, OpTm)
+
 
 # Display season record 
 print(f'\nGame Results:')
