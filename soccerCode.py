@@ -1,6 +1,5 @@
 # This is my original code for assignment A4 
 # initialize lists 
-
 Soccer = {}
 Season = []
 Games = []
@@ -54,8 +53,9 @@ for Ct in range(GameCt):
     Num += 1
     Games.append([HmScr, OpTm, OpScr, Result])
     # append each score to the list of games
-Season.append([Games])
-# append games to the season
 
-# call the function to display the results of the season
+# append games to the season
+Season.append([Games])
+
+# Call seasoninfo() to display the results of the season
 seasoninfo(Soccer, Win, Loss)
