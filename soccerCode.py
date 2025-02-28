@@ -23,6 +23,10 @@ def get_player_name():
 #Call the function to get the player's name
 player_name= get_player_name()
 
+# import menu function and assign it to a variable to get the user's input
+from P2_menu import menu
+menuChoice = menu()
+
 Soccer = {}
 Season = []
 Games = []
@@ -54,8 +58,6 @@ for Ct in range(GameCt):
     print(f"{HomeTm} is playing against {OpTm}")
 
     # for game # 
-    play_game(HomeTm, OpTm)
-
 
 
 def play_game(HomeTm, OpTm):
@@ -78,6 +80,8 @@ def play_game(HomeTm, OpTm):
     Season.append(games)
     return result
 # append games to the season
+
+play_game(HomeTm, OpTm)
 
 # Display season record 
 print(f'\nGame Results:')
