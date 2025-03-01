@@ -1,59 +1,71 @@
-# This should make the game work
+# This is my original code for assignment A4 
+# initialize lists 
 
-# import the functions from soccerFunctions.py
-from soccerFunctions import *
+# import menu function and assign it to a variable to get the user's input
+from P2_menu import menu
+from get_player_name_function import get_player_name
+from P5_print_info import seasoninfo
 
-get_player_name()
+player_name= get_player_name()
 
-iChoice = menu()
+menuChoice = menu()
 
-dictSoccer = {}
+Soccer = {}
+Season = []
+Games = []
 
-# Initialize variables for wins and losses
-HomeTm = ""
-OpTm = ""
-iWins = 0
-iLosses = 0
-GameCt = 0
+TeamOptions = ["Utah State", "BYU", "UCLA", "Florida State", "Notre Dame", "BSU", "USC", "Penn State"] 
 
-while iChoice !=4 :
 
-    # Menu Option 1
-    if iChoice == 1 :
-        HomeTm = HomeSelection()
-        print(HomeTm)
-        iChoice = menu()
+# gather inputs/set information 
 
-    # Menu Option 2
-    elif iChoice == 2 :
-        # Get initial input
-        GameCt = input("Enter the number of teams "+ HomeTm + " will play against (1-7): ")
+from Q3Fx import HomeSelection, OpponentSelection
 
-        # Keep looping until input is valid (a number)
-        while not GameCt.isdigit():  
-            print("Invalid input. Please enter a valid number of games.")
+HomeTm = HomeSelection()
+print(HomeTm)
 
-            # Ask again for input
-            GameCt = input("How many games? ")
+GameCt = int(input("Enter the number of teams "+ HomeTm + " will play against (1-7): "))
 
-        # Convert to integer after validation
-        GameCt = int(GameCt) 
-        dictSoccer[HomeTm] = []
-        for Ct in range(GameCt):
-            OpTm = OpponentSelection()
-            print(f"{HomeTm} is playing against {OpTm}")
-        dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, iWins, iLosses, GameCt)
-        iChoice = menu()
+Soccer[HomeTm] = Season
+
+Win = 0
+Loss = 0 
+Num = 1
+
+
+# Gather game-specific information (name, scores, etc)
+for Ct in range(GameCt):
     
-    # Menu Option 3
-    elif iChoice == 3 :
-        seasoninfo(dictSoccer, iWins, iLosses)
-        iChoice = menu()
+    OpTm = OpponentSelection()
 
-    # prevent invalid input
-    else:
-        print("\nInvalid choice. Please try again.")
-        iChoice = menu()
+    print(f"{HomeTm} is playing against {OpTm}")
 
-# Menu Option 4
-print("\nExiting Program. Goodbye!\n")
+    # for game # 
+
+
+def play_game(HomeTm, OpTm):
+    import random
+    home_score = 0
+    opponent_score = 0
+    #generate the scores for the game
+    while home_score == opponent_score:
+        home_score = random.randint(0, 10)
+        opponent_score = random.randint(0, 10)
+    #calculate the result
+    result = "W" if home_score > opponent_score else "L"
+    #store the games
+    games = {
+        "home_team" : home_team,
+        "home_score" : home_score,
+        "opponent_team" : opponent_team,
+        "opponent_score" : opponent_team,
+        "result" : result
+    }
+    Season.append(games)
+    return result
+# append games to the season
+
+play_game(HomeTm, OpTm)
+
+# print results of the season
+seasoninfo(Soccer, Win, Loss)
