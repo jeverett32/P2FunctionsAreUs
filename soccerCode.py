@@ -16,7 +16,7 @@ iWins = 0
 iLosses = 0
 GameCt = 0
 
-while iChoice in [1, 2, 3] :
+while iChoice in range(1,5) :
     # Menu Option 1
     if iChoice == 1 :
         HomeTm = HomeSelection()
@@ -37,15 +37,16 @@ while iChoice in [1, 2, 3] :
         for Ct in range(GameCt):
             OpTm = OpponentSelection()
             print(f"{HomeTm} is playing against {OpTm}")
-        dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, OpTm, iWins, iLosses, GameCt)
+        dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, iWins, iLosses, GameCt)
         iChoice = menu()
     # Menu Option 3
     elif iChoice == 3 :
         seasoninfo(dictSoccer, iWins, iLosses)
         iChoice = menu()
     # Menu Option 4
+    elif iChoice == 4 :
+        print("Goodbye!")
+    
     else:
-        if iChoice == 4 :
-            print("Goodbye!")
-        else:
-            print("Invalid choice. Please try again.")
+        print("Invalid choice. Please try again.")
+        iChoice = menu()
