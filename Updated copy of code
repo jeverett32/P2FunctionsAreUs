@@ -1,7 +1,8 @@
+
 # This should make the game work
 
 # import the functions from soccerFunctions.py
-from soccerFunctions import *
+from practice import *
 
 get_player_name()
 
@@ -39,9 +40,10 @@ while iChoice !=4 :
         # Convert to integer after validation
         GameCt = int(GameCt) 
         dictSoccer[HomeTm] = []
-        for Ct in range(GameCt):
-            OpTm = OpponentSelection()
-            print(f"{HomeTm} is playing against {OpTm}")
+        #for Ct in range(GameCt):
+         #   OpTm = OpponentSelection()
+          #  print(f"{HomeTm} is playing against {OpTm}")
+        
         dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, iWins, iLosses, GameCt)
         iChoice = menu()
     
