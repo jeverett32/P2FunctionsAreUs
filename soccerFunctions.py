@@ -24,8 +24,8 @@ def get_player_name():
 def menu() :
     # print the menu
     print("\nMenu: ")
-    print("1. Choose your team and the opposing teams")
-    print("2. Play the game")
+    print("1. Choose your team")
+    print("2. Choose the opposing teams and Play the game")
     print("3. View the season record")
     print("4. Exit")
 

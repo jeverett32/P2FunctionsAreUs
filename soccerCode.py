@@ -21,6 +21,8 @@ while iChoice in [1, 2, 3] :
     if iChoice == 1 :
         HomeTm = HomeSelection()
         print(HomeTm)
+    # Menu Option 2
+    elif iChoice == 2 :
         # Get initial input
         GameCt = input("Enter the number of teams "+ HomeTm + " will play against (1-7): ")
         # Keep looping until input is valid (a number)
@@ -34,9 +36,6 @@ while iChoice in [1, 2, 3] :
         for Ct in range(GameCt):
             OpTm = OpponentSelection()
             print(f"{HomeTm} is playing against {OpTm}")
-        iChoice = menu()
-    # Menu Option 2
-    elif iChoice == 2 :
         dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, OpTm, iWins, iLosses, GameCt)
     # Menu Option 3
     elif iChoice == 3 :
