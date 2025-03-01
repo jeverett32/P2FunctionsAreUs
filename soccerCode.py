@@ -16,7 +16,7 @@ iWins = 0
 iLosses = 0
 GameCt = 0
 
-while iChoice in range(1,5) :
+while iChoice in [1, 2, 3] :
     # Menu Option 1
     if iChoice == 1 :
         HomeTm = HomeSelection()
@@ -43,10 +43,9 @@ while iChoice in range(1,5) :
     elif iChoice == 3 :
         seasoninfo(dictSoccer, iWins, iLosses)
         iChoice = menu()
-    # Menu Option 4
-    elif iChoice == 4 :
-        print("Goodbye!")
-    
-    else:
-        print("Invalid choice. Please try again.")
-        iChoice = menu()
+# Menu Option 4
+if iChoice == 4 :
+    print("Exiting Program. Goodbye!")
+else:
+    print("Invalid choice. Please try again.")
+    iChoice = menu()
