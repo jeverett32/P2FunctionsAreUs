@@ -10,7 +10,7 @@ def get_player_name():
     print("   1. Choose your team from the list provided.")
     print("   2. Select an opponent to challenge.")
     print("   3. The selected teams will play against each other in an intense match.")
-    print("   4. Check out the final score and see which team comes out on top.\nMay the best team win!")
+    print("   4. Check out the final score and see which team comes out on top.\n\nMay the best team win!")
     #Collect the player's name
     name=input("\nTo start, enter your name: ")
     #Personalized welcome message
@@ -95,9 +95,12 @@ def OpponentSelection(TeamList = None):
 
 # Will's function
 
-def play_game(dictSoccer, HomeTm, OpTm, iWins, iLosses, iNumGames):
+def play_game(dictSoccer, HomeTm, iWins, iLosses, iNumGames):
     import random
     for iGame in range(iNumGames):
+        # Select an opponent
+        OpTm = OpponentSelection()
+        # Generate random scores for the
         iHomeScore = 0
         iOppScore = 0
         while iHomeScore == iOppScore:
