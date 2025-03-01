@@ -43,9 +43,9 @@ while iChoice in [1, 2, 3] :
     elif iChoice == 3 :
         seasoninfo(dictSoccer, iWins, iLosses)
         iChoice = menu()
-    # Menu Option 4
-    else:
-        if iChoice == 4 :
-            print("Goodbye!")
-        else:
-            print("Invalid choice. Please try again.")
+# Menu Option 4
+if iChoice == 4 :
+    print("Exiting Program. Goodbye!")
+else:
+    print("Invalid choice. Please try again.")
+    iChoice = menu()
