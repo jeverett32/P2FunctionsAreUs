@@ -55,10 +55,10 @@ def play_game(HomeTm, OpTm):
     result = "W" if home_score > opponent_score else "L"
     #store the games
     games = {
-        "home_team" : home_team,
+        "home_team": HomeTm,
         "home_score" : home_score,
-        "opponent_team" : opponent_team,
-        "opponent_score" : opponent_team,
+        "opponent_team" : OpTm,
+        "opponent_score" : opponent_score,
         "result" : result
     }
     Season.append(games)
