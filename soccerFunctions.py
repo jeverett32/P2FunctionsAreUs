@@ -23,6 +23,9 @@ def get_player_name():
 
 def menu() :
     # print the menu
+    # iChoice = 0
+    # while iChoice != 4 :
+    #     iChoice = 0
     print("\nMenu: ")
     print("1. Choose your team")
     print("2. Choose the opposing teams and Play the game")

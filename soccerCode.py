@@ -21,6 +21,7 @@ while iChoice in [1, 2, 3] :
     if iChoice == 1 :
         HomeTm = HomeSelection()
         print(HomeTm)
+        iChoice = menu()
     # Menu Option 2
     elif iChoice == 2 :
         # Get initial input
@@ -37,9 +38,11 @@ while iChoice in [1, 2, 3] :
             OpTm = OpponentSelection()
             print(f"{HomeTm} is playing against {OpTm}")
         dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, OpTm, iWins, iLosses, GameCt)
+        iChoice = menu()
     # Menu Option 3
     elif iChoice == 3 :
         seasoninfo(dictSoccer, iWins, iLosses)
+        iChoice = menu()
     # Menu Option 4
     else:
         if iChoice == 4 :
