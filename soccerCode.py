@@ -35,7 +35,6 @@ while iChoice !=4 :
 
             # Ask again for input
             GameCt = input("How many games? ")
-            iChoice = menu()
 
         # Convert to integer after validation
         GameCt = int(GameCt) 
