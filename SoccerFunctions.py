@@ -123,9 +123,8 @@ def seasoninfo(dictTeams, iWins, iLosses):
     print(f"-----Results for {sTeamName}'s Season-----")
     # Access the nested Games list inside Season
     for key, values in dictTeams.items():
-        for game_list in values:  # Extract the inner list
-            for game in game_list:  # Iterate through the actual game entries
-                print(f"Result of {key} vs. {game[1]}: {game[0]} - {game[2]} ({game[3]})")
+        for game in values:  # Extract the inner list
+            print(f"Result of {key} vs. {game['Opponent']}: {game['Home Score']} - {game['Opponent Score']} ({game['Record']})")
     # Prints the final season record
     print(f"\nFinal season record: {iWins} - {iLosses}")
     if iWins >= iLosses:
