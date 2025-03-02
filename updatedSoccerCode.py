@@ -41,8 +41,8 @@ while iChoice !=4 :
         GameCt = int(GameCt) 
         dictSoccer[HomeTm] = []
         #for Ct in range(GameCt):
-         #   OpTm = OpponentSelection()
-          #  print(f"{HomeTm} is playing against {OpTm}")
+        #   OpTm = OpponentSelection()
+        #  print(f"{HomeTm} is playing against {OpTm}")
         
         dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, iWins, iLosses, GameCt)
         iChoice = menu()
