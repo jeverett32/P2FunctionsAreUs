@@ -3,11 +3,6 @@
 #Collects the name of the player
 #Returns the name to be used in the program later.
 #Create a function
-
-
-
-
-
 def get_player_name():
     #A welcome introduction to explain how the game will work
     print("Welcome to the Soccer Team Tournament Matchup!")
@@ -22,10 +17,8 @@ def get_player_name():
     print(f"Welcome, {name}! Get ready to play!")
     #Returning name to be used in the program
     return name
-
 # Aysha Entrikin
 # This code displays a menu and stores the user input in a variable for future use in calling functions
-
 def menu() :
     # print the menu
     # iChoice = 0
@@ -36,7 +29,6 @@ def menu() :
     print("2. Choose the opposing teams and Play the game")
     print("3. View the season record")
     print("4. Exit")
-
     # get user input but do not allow any input outside of the menu choices
     bCont = True
     while bCont == True :
@@ -45,10 +37,8 @@ def menu() :
             bCont = False
         except ValueError :
             print("\nPlease enter a valid number ")
-
     # return the input
     return iChoice
-
 # Kiera's function?
 # Display list of all teams 
 # #and allow the user to choose a team using a menu. 
@@ -59,9 +49,7 @@ def menu() :
 # This function should receive a parameter but give it a default value if none is passed.
 #  You can use this function for both choosing the home team and the opponent team.
 
-
 TeamOptions = ["Utah State", "BYU", "UCLA", "Florida State", "Notre Dame", "BSU", "USC", "Penn State"] 
-
 # this is the home team selection from a preset list 
 def HomeSelection(TeamList = None):
     track = 1
@@ -79,7 +67,6 @@ def HomeSelection(TeamList = None):
         else:
             print("Invalid choice. Please try again.")
     return HomeTm
-
 # this is a selection of the opposing team 
 def OpponentSelection(TeamList = None):
     track = 1
@@ -97,9 +84,7 @@ def OpponentSelection(TeamList = None):
         else:
             print("Invalid choice. Please try again.")
     return OpTm
-
 # Will's function
-
 def play_game(dictSoccer, HomeTm, iWins, iLosses, iNumGames):
     import random
     for iGame in range(iNumGames):
@@ -126,26 +111,20 @@ def play_game(dictSoccer, HomeTm, iWins, iLosses, iNumGames):
             'Record': sWin})
     # Return the dictionary of games
     return dictSoccer, iWins, iLosses
-
 # John Everett
-
 # Function to display the results of the season
-
 # Receives the dictionary of teams, the number of wins, and the number of losses
 def seasoninfo(dictTeams, iWins, iLosses):
     # Add a line break for readability
     print("\n")
-
     # Assign the team name to the variable sTeamName and print a title for the results section
     sTeamName = next(iter(dictTeams))
     print(f"-----Results for {sTeamName}'s Season-----")
-
     # Access the nested Games list inside Season
     for key, values in dictTeams.items():
         for game_list in values:  # Extract the inner list
-    #        for game in game_list:  # Iterate through the actual game entries
-                print(f"Result of {key} vs. {game_list['Opponent']}: {game_list['Home Score']} - {game_list['Opponent Score']} ({game_list['Record']})")
-
+            for game in game_list:  # Iterate through the actual game entries
+                print(f"Result of {key} vs. {game[1]}: {game[0]} - {game[2]} ({game[3]})")
     # Prints the final season record
     print(f"\nFinal season record: {iWins} - {iLosses}")
     if iWins >= iLosses:
