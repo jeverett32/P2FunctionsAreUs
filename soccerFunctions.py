@@ -84,6 +84,7 @@ def OpponentSelection(TeamList = None):
         else:
             print("Invalid choice. Please try again.")
     return OpTm
+
 # Will's function
 def play_game(dictSoccer, HomeTm, iWins, iLosses, iNumGames):
     import random
