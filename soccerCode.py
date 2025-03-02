@@ -45,10 +45,8 @@ def SoccerGame():
             # Convert to integer after validation
             GameCt = int(GameCt) 
             dictSoccer[HomeTm] = []
-            #for Ct in range(GameCt):
-            #   OpTm = OpponentSelection()
-            #  print(f"{HomeTm} is playing against {OpTm}")
-            
+
+            # Play the game
             dictSoccer, iWins, iLosses = play_game(dictSoccer, HomeTm, iWins, iLosses, GameCt)
             iChoice = menu()
         
