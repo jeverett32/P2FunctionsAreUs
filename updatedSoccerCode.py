@@ -2,7 +2,7 @@
 # This should make the game work
 
 # import the functions from soccerFunctions.py
-from practice import *
+from updatedSoccerFunctions import *
 
 get_player_name()
 
