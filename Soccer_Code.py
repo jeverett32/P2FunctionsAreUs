@@ -2,7 +2,7 @@
 # This should make the game work
 
 # import the functions from soccerFunctions.py
-from practice import *
+from SoccerFunctions import *
 
 def SoccerGame():
 
