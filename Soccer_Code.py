@@ -6,7 +6,6 @@ from soccerFunctions import *
 
 def SoccerGame():
 
-
     get_player_name()
 
     iChoice = menu()
@@ -62,3 +61,4 @@ def SoccerGame():
 
     # Menu Option 4
     print("\nExiting Program. Goodbye!\n")
+SoccerGame()
